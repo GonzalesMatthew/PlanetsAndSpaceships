@@ -20,6 +20,14 @@ namespace PlanetsAndSpaceships
             Console.WriteLine($"planets: {String.Join(",", planetList)}");
             Console.WriteLine($"rocky planets: {String.Join(",", rockyPlanets)}");
 
+            var spacecraft = new Dictionary<string, List<string>>();
+            spacecraft.Add("Voyager1", new List<string> { "Jupiter", "Saturn", "Uranus", "Neptune" });
+
+            foreach (var planet in planetList)
+            {
+                foreach ()
+            }
+
         }
     }
 }
