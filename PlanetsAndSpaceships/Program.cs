@@ -22,12 +22,28 @@ namespace PlanetsAndSpaceships
 
             var spacecraft = new Dictionary<string, List<string>>();
             spacecraft.Add("Voyager1", new List<string> { "Jupiter", "Saturn", "Uranus", "Neptune" });
+            spacecraft.Add("MESSENGER", new List<string> { "Mercury" });
+            spacecraft.Add("BepiColombo", new List<string> { "Mercury" });
+            spacecraft.Add("Mariner 2", new List<string> { "Venus" });
+            spacecraft.Add("Mars Express", new List<string> { "Mars" });
+            spacecraft.Add("Phoenix", new List<string> { "Mars" });
 
+            Console.WriteLine("The planets were visited by these spacecraft:");
             foreach (var planet in planetList)
             {
-                foreach ()
+                var visitedBy = new List<string>();
+                foreach (var craft in spacecraft)
+                {
+                    if ( craft.Value.Contains(planet))
+                    {
+                        visitedBy.Add(craft.Key);
+                    }
+                }
+                if (visitedBy.Count > 0)
+                {
+                    Console.WriteLine($"{planet}: {String.Join(",", visitedBy)}");
+                }
             }
-
         }
     }
 }
